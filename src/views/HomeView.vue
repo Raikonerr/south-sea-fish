@@ -13,16 +13,14 @@
         <!-- Mobile Nav  -->
         <nav class="fixed top-0 z-30 flex flex-col flex-wrap items-center justify-between w-full h-auto px-6 md:hidden">
             <div class="relative z-30 flex items-center justify-between w-full h-20">
-                <a href="#_" class="flex items-center flex-shrink-0 mr-6 text-white">
-                    <span class="text-3xl font-black leading-none text-white select-none logo">tails<span class="text-blue-700">.</span></span>
-                </a>
+               
                 <div class="block lg:hidden">
-                    <button @click="showMenu = !showMenu" class="flex items-center justify-center w-10 h-10 text-gray-200 rounded-full hover:text-white hover:bg-white hover:bg-opacity-25 focus:outline-none">
+                    <!-- <button @click="showMenu = !showMenu" class="flex items-center justify-center w-10 h-10 text-gray-200 rounded-full hover:text-white hover:bg-white hover:bg-opacity-25 focus:outline-none">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Menu</title>
                             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                         </svg>
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </nav>
@@ -133,7 +131,7 @@
 <script>
 // @ is an alias to /src
 
-import HelloWorld from '@/components/HelloWorld.vue'
+
 import NavBar from '@/components/NavBar.vue'
 import FooTer from '@/components/FooTer.vue'
 
@@ -143,7 +141,6 @@ export default {
   name: 'HomeView',
 
   components: {
-    HelloWorld,
     NavBar,
     FooTer
 },

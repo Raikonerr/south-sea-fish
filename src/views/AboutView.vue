@@ -1,7 +1,7 @@
 <template>
   
     <NavBar />
-    <section class="relative py-24 bg-white bg-bottom bg-cover" style="background-image:url('https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=905')">
+    <section class="relative py-24 bg-white bg-bottom bg-cover" style="background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774')">
     <div class="absolute inset-0 block w-full h-full opacity-25 bg-gradient-to-br from-transparent via-black to-transparent lg:hidden"></div>
     <div class="flex flex-col items-center justify-between px-10 mx-auto max-w-7xl xl:px-12 lg:flex-row">
         <div class="relative mb-6 lg:mb-0">
@@ -20,13 +20,13 @@
             <!-- Top Text -->
             <div class="flex justify-between">
                 <h1 class="relative flex flex-col text-6xl font-extrabold text-left text-black">
-                    Crafting
-                    <span>Powerful</span>
-                    <span>Experiences</span>
+                    High
+                    <span>Quality</span>
+                    <span>Required</span>
                 </h1>
             </div>
             <!-- Right Image -->
-            <div class="relative top-0 right-0 h-20 mt-12 md:-mt-16  md:h-96">
+            <div class="relative top-0 right-0 p-10 mt-12 md:-mt-16  md:h-96">
                 <img src="https://images.unsplash.com/photo-1531012278403-e5db3b774373?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" class="object-cover mt-3 mr-5 h-30 lg:h-96">
             </div>
         </div>

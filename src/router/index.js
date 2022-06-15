@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+// import Dashboard from '../views/admin/content/Dashboard.vue'
 
 const routes = [
   {
@@ -51,20 +52,44 @@ const routes = [
     component: () => import('../views/ProfileView.vue')
   },
   {
-    path:'/dashboard',
+    path:'/admin/dashboard',
     name : 'dashboard',
-    component: () => import('../views/admin/DashboardView.vue')
+    component:() => import('../views/admin/content/Dashboard.vue')
   },
   {
     path:'/admin/product',
     name : 'admin-product',
-    component: () => import('../views/admin/ProductView.vue')
+    component: () => import('../views/admin/content/Products.vue')
   },
   {
     path:'/admin/order',
     name : 'admin-order',
-    component: () => import('../views/admin/OrderView.vue')
+    component: () => import('../views/admin/content/Orders.vue')
+  },
+  
+  {
+    path:'/admin/category',
+    name : 'admin-category',
+    component: () => import('../views/admin/content/Category.vue')
+  },
+  {
+    path:'/admin/customer',
+    name : 'admin-customer',
+    component: () => import('../views/admin/content/Customer.vue')
+  },
+  
+  {
+    path:'/product/detail/:id',
+    name : 'product-detail',
+    component: () => import('../views/ProductDetail.vue')
+  },
+
+  {
+    path:'/basket',
+    name : 'basket',
+    component: () => import('../views/BasketView.vue')
   }
+
 
 ]
 

@@ -21,10 +21,10 @@
         <div class="flex flex-col justify-between text-center md:flex-row">
             <p class="order-last text-sm leading-tight text-gray-500 md:order-first"> Crafted with <a href="#" class="text-white">Raikoner</a>. Built with ❤️.</p>
             <ul class="flex flex-row justify-center pb-3 -ml-4 -mr-4 text-sm">
-                <li> <a href="#_" class="px-4 text-gray-500 hover:text-white">Contact</a> </li>
-                <li> <a href="#_" class="px-4 text-gray-500 hover:text-white">About US</a> </li>
-                <li> <a href="#_" class="px-4 text-gray-500 hover:text-white">Quality</a> </li>
-                <li> <a href="#_" class="px-4 text-gray-500 hover:text-white">Nothing</a></li>
+                <li> <router-link href="#_" class="px-4 text-gray-500 hover:text-white" to="/contact">Contact</router-link> </li>
+                <li> <router-link href="#_" class="px-4 text-gray-500 hover:text-white" to="/about">About US</router-link> </li>
+                <li> <router-link href="#_" class="px-4 text-gray-500 hover:text-white" to="/quality">Quality</router-link> </li>
+                <li> <router-link href="#_" class="px-4 text-gray-500 hover:text-white" to="">Nothing</router-link></li>
             </ul>
         </div>
     </div>
