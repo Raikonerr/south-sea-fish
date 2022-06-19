@@ -80,7 +80,7 @@
     <!-- Modal add products  -->
 
     <div v-if="showModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex mt-6">
-        <div class="relative w-auto my-6 mx-auto w-full max-w-3xl ">
+        <div class="relative w-full my-6 mx-auto  max-w-3xl ">
             <!--content-->
             <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <!--header-->
@@ -155,7 +155,7 @@
     <!-- modal update product -->
 
     <div v-if="modalShow" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex mt-6">
-        <div class="relative w-auto my-6 mx-auto w-full max-w-3xl ">
+        <div class="relative my-6 mx-auto w-full max-w-3xl ">
             <!--content-->
             <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <!--header-->
@@ -293,6 +293,10 @@ export default {
 
     mounted() {
         this.getProducts()
+        let user = localStorage.getItem('user')
+        if(user){
+            this.$router.push('/')
+        }
     },
 
     methods: {
@@ -397,7 +401,6 @@ export default {
             //     this.category = response.data
             // ) 
             // console.log(response.data)
-
         },
 
         async deleteProduct(id) {

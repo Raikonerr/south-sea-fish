@@ -1,247 +1,113 @@
 <template>
-    <div class="App">
-     <header class="section-header">
-        <section class="header-main border-bottom">
-            <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-2 col-4">
-            <a href="#">Company Name</a>
-            </div>
-            <div class="col-lg-6 col-sm-12">
-                <form action="#" class="search">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control" placeholder="Search" />
-                        <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="fa fa-search"></i>
+  <TransitionRoot as="template" :show="open">
+    <Dialog as="div" class="relative z-10" @close="open = true">
+      <TransitionChild as="template" enter="ease-in-out duration-500" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-500" leave-from="opacity-100" leave-to="opacity-0">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+      </TransitionChild>
+
+      <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <TransitionChild as="template" enter="transform transition ease-in-out duration-500 sm:duration-700" enter-from="translate-x-full" enter-to="translate-x-0" leave="transform transition ease-in-out duration-500 sm:duration-700" leave-from="translate-x-0" leave-to="translate-x-full">
+              <DialogPanel class="pointer-events-auto w-screen max-w-md">
+                <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                  <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+                    <div class="flex items-start justify-between">
+                      <DialogTitle class="text-lg font-medium text-gray-900"> Shopping cart </DialogTitle>
+                      <div class="ml-3 flex h-7 items-center">
+                        <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500" @click="open = false">
+                          <span class="sr-only">Close panel</span>
+                          <XIcon class="h-6 w-6" aria-hidden="true" />
                         </button>
-                        </div>
+                      </div>
                     </div>
-                </form> 
-            </div> 
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="widgets-wrap float-md-right">
-                    <div class="widget-header  mr-3">
-                        <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-                        <span class="badge badge-pill badge-danger notify">0</span>
-                    </div>
-                    <div class="widget-header icontext">
-                        <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
-                        <div class="text">
-                            <span class="text-muted">Welcome!</span>
-                            <div> 
-                                <a href="#">Sign in</a> |  
-                                <a href="#">Register</a>
+
+                    <div class="mt-8">
+                      <div class="flow-root">
+                        <ul role="list" class="-my-6 divide-y divide-gray-200">
+                          <li v-for="product in products" :key="product.id" class="flex py-6">
+                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                              <img :src="product.imageSrc" :alt="product.imageAlt" class="h-full w-full object-cover object-center" />
                             </div>
-                        </div>
-                    </div>
-        
-                </div> 
-            </div>
-        </div>
-            </div> 
-        </section> 
-        </header> 
-        
-        
-        
-        
-        <section class="section-pagetop bg">
-        <div class="container">
-            <h2 class="title-page">Shopping cart</h2>
-        </div> 
-        </section>
-        
-        <section class="section-content padding-y">
-        <div class="container">
-        
-        <div class="row">
-            <main class="col-md-9">
-        <div class="card">
-        
-        <table class="table table-borderless table-shopping-cart">
-        <thead class="text-muted">
-        <tr class="small text-uppercase">
-        <th scope="col">Product</th>
-        <th scope="col" width="120">Quantity</th>
-        <th scope="col" width="120">Price</th>
-        <th scope="col" class="text-right" width="200"> </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                <figure class="itemside">
-                    <div class="aside"><img src="https://therichpost.com/wp-content/uploads/2017/04/s4-1.jpg" class="img-sm" /></div>
-                    <figcaption class="info">
-                        <a href="#" class="title text-dark">Some name of item goes here nice</a>
-                        <p class="text-muted small">Size: XL, Color: blue, <br /> Brand: Gucci</p>
-                    </figcaption>
-                </figure>
-            </td>
-            <td> 
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>	
-                    <option>3</option>	
-                    <option>4</option>	
-                </select> 
-            </td>
-            <td> 
-                <div class="price-wrap"> 
-                    <var class="price">$1156.00</var> 
-                    <small class="text-muted"> $315.20 each </small> 
-                </div> 
-            </td>
-            <td class="text-right"> 
-            <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light mr-2" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-            <a href="" class="btn btn-light"> Remove</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <figure class="itemside">
-                    <div class="aside"><img src="https://therichpost.com/wp-content/uploads/2017/04/s5-1.jpg" class="img-sm" /></div>
-                    <figcaption class="info">
-                        <a href="#" class="title text-dark">Product name  goes here nice</a>
-                        <p class="text-muted small">Size: XL, Color: blue, <br /> Brand: Gucci</p>
-                    </figcaption>
-                </figure>
-            </td>
-            <td> 
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>	
-                    <option>3</option>	
-                    <option>4</option>	
-                </select> 
-            </td>
-            <td> 
-                <div class="price-wrap"> 
-                    <var class="price">$149.97</var> 
-                    <small  class="text-muted"> $75.00 each </small>  
-                </div> 
-            </td>
-            <td class="text-right"> 
-            <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light mr-2" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-            <a href="" class="btn btn-light btn-round"> Remove</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <figure class="itemside">
-                    <div class="aside"><img src="https://therichpost.com/wp-content/uploads/2017/04/s1-1.jpg" class="img-sm" /></div>
-                    <figcaption class="info">
-                        <a href="#" class="title text-dark">Another name of some product goes just here</a>
-                        <p class="small text-muted">Size: XL, Color: blue,  Brand: Tissot</p>
-                    </figcaption>
-                </figure>
-            </td>
-            <td> 
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>	
-                    <option>3</option>	
-                </select> 
-            </td>
-            <td> 
-                <div class="price-wrap"> 
-                    <var class="price">$98.00</var> 
-                    <small class="text-muted"> $578.00 each</small> 
-                </div> 
-            </td>
-            <td class="text-right"> 
-                <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light mr-2" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-                <a href="" class="btn btn-light btn-round"> Remove</a>
-            </td>
-        </tr>
-        </tbody>
-        </table>
-        
-        <div class="card-body border-top">
-            <a href="#" class="btn btn-primary float-md-right"> Make Purchase <i class="fa fa-chevron-right"></i> </a>
-            <a href="#" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Continue shopping </a>
-        </div>	
-        </div> 
-        
-        <div class="alert alert-success mt-3">
-            <p class="icontext"><i class="icon text-success fa fa-truck"></i> Free Delivery within 1-2 weeks</p>
-        </div>
-        
-            </main>
-            <aside class="col-md-3">
-                <div class="card mb-3">
-                    <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label>Have coupon?</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="" placeholder="Coupon code" />
-                                <span class="input-group-append"> 
-                                    <button class="btn btn-primary">Apply</button>
-                                </span>
+
+                            <div class="ml-4 flex flex-1 flex-col">
+                              <div>
+                                <div class="flex justify-between text-base font-medium text-gray-900">
+                                  <h3>
+                                    <a :href="product.href"> {{ product.name }} </a>
+                                  </h3>
+                                  <p class="ml-4">{{ product.price }}</p>
+                                </div>
+                                <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+                              </div>
+                              <div class="flex flex-1 items-end justify-between text-sm">
+                                <p class="text-gray-500">Qty {{ product.quantity }}</p>
+
+                                <div class="flex">
+                                  <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                </div>
+                              </div>
                             </div>
-                        </div>
-                    </form>
-                    </div> 
-                </div>  
-                <div class="card">
-                    <div class="card-body">
-                            <dl class="dlist-align">
-                            <dt>Total price:</dt>
-                            <dd class="text-right">USD 568</dd>
-                            </dl>
-                            <dl class="dlist-align">
-                            <dt>Discount:</dt>
-                            <dd class="text-right">USD 658</dd>
-                            </dl>
-                            <dl class="dlist-align">
-                            <dt>Total:</dt>
-                            <dd class="text-right  h5"><strong>$1,650</strong></dd>
-                            </dl>
-                            <hr />
-                            <p class="text-center mb-3">
-                                <img src="https://therichpost.com/wp-content/uploads/2021/12/payments-1.png" height="26" />
-                            </p>
-                            
-                    </div> 
-                </div>  
-            </aside> 
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
+                    <div class="flex justify-between text-base font-medium text-gray-900">
+                      <p>Subtotal</p>
+                      <p>$262.00</p>
+                    </div>
+                    <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                    <div class="mt-6">
+                      <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                    </div>
+                    <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+                      <p>
+                        or <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500" @click="open = false">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </DialogPanel>
+            </TransitionChild>
+          </div>
         </div>
-        
-        </div> 
-        </section>
-       
-        <section class="section-name bg padding-y">
-        <div class="container">
-        <h6>Payment and refund policy</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        
-        </div>
-        </section>
-      
-        <footer class="section-footer border-top padding-y">
-            <div class="container">
-                <p class="float-md-right"> 
-                    &copy; Copyright 2021 All rights reserved
-                </p>
-                <p>
-                    <a href="#">Terms and conditions</a>
-                </p>
-            </div>
-        </footer>
-       
-     
-    </div>
+      </div>
+    </Dialog>
+  </TransitionRoot>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import { XIcon } from '@heroicons/vue/outline'
+
+const products = [
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    color: 'Salmon',
+    price: '$90.00',
+    quantity: 1,
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+  {
+    id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '$32.00',
+    quantity: 1,
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  // More products...
+]
+
+const open = ref(true)
+</script>
