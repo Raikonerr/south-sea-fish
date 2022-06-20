@@ -27,23 +27,22 @@
                                     <thead class="bg-gray-50">
                                         <tr>
                                             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:pl-8">Username</th>
-                                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
-                                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Adresse</th>
-                                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Action</th>
+                                            <th scope="col" class=" text-left text-sm font-semibold text-gray-900">Email</th>
+                                            <th scope="col" class=" text-left text-sm font-semibold text-gray-900">Adresse</th>
+                                            <th scope="col" class=" text-left text-sm font-semibold text-gray-900">Action</th>
                                             
                                             <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 lg:pr-8">
                                                 <span class="sr-only">Edit</span>
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="divide-y divide-gray-200 bg-white">
+                                    <tbody class="divide-y divide-gray-200 bg-white ">
                                         <tr v-for="person in users" :key="person.id">
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">{{ person.username }}</td>
                                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.email }}</td>
                                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.adresse }}</td>
                                             
                                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 lg:pr-8">
-                                               <!-- delete -->
                                                 <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:w-auto" @click="deleteCustomer(person.id)">Delete</button>
                                             </td>
                                         </tr>

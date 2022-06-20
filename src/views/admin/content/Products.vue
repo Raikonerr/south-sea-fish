@@ -293,10 +293,10 @@ export default {
 
     mounted() {
         this.getProducts()
-        let user = localStorage.getItem('user')
-        if(user){
-            this.$router.push('/')
-        }
+        // let user = localStorage.getItem('user')
+        // if(user){
+        //     this.$router.push('/')
+        // }
     },
 
     methods: {

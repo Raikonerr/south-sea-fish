@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <section class="relative py-24 bg-black bg-bottom bg-cover" style="background-image:url('https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=905')">
+  <section class="relative py-24 bg-black bg-bottom bg-cover" style="background-image:url('https://i.pinimg.com/736x/1b/94/e6/1b94e6f9bb6461cbe8806058d7f3229c.jpg')">
     <div class="absolute inset-0 block w-full h-full opacity-25 bg-gradient-to-br from-transparent via-black to-transparent lg:hidden"></div>
     <div class="flex flex-col items-center justify-between px-10 mx-auto max-w-7xl xl:px-12 lg:flex-row">
       <div class="relative mb-6 lg:mb-0">

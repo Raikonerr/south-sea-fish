@@ -77,6 +77,12 @@ const routes = [
     name : 'admin-customer',
     component: () => import('../views/admin/content/Customer.vue')
   },
+
+  {
+    path:'/admin/message',
+    name : 'admin-message',
+    component: () => import('../views/admin/content/Message.vue')
+  },
   
   {
     path:'/product/detail/:id',
